@@ -1,4 +1,0 @@
-name = "radtrails"
-
-[env.production]
-name = "radtrails"
