@@ -10,8 +10,8 @@
     "lint": "eslint",
     "cf:build": "node scripts/build.mjs --cloudflare",
     "cf:deploy": "opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "preview": "npm run cf:build && opennextjs-cloudflare preview",
+    "deploy": "npm run cf:build && npm run cf:deploy"
   },
   "dependencies": {
     "next": "^16.2.6",
@@ -29,6 +29,9 @@
     "tailwindcss": "^4",
     "typescript": "^6",
     "wrangler": "^4.101.0"
+  },
+  "overrides": {
+    "cloudflare": "4.4.1"
   },
   "allowScripts": {
     "esbuild@0.25.4": true,
