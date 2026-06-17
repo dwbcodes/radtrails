@@ -19,5 +19,6 @@ export const navItems = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/racing", label: "Racing" },
+  { href: "/community", label: "Community" },
   { href: "/support", label: "Support" },
 ];
