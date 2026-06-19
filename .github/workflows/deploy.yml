@@ -32,4 +32,4 @@ jobs:
             echo "ERROR: CLOUDFLARE_API_TOKEN is empty. Check repo secrets."
             exit 1
           fi
-          npx wrangler pages deploy .open-next/server --project-name=radtrails --branch=${{ github.head_ref || github.ref_name }}
+          npx wrangler deploy .open-next/worker.js --name=radtrails
