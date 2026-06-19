@@ -23,12 +23,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Debug build output
-        run: ls -la .open-next/ && ls -la .open-next/server/ 2>/dev/null || echo ".open-next/server does not exist"
-
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .open-next/server --project-name=radtrails --branch=${{ github.head_ref || github.ref_name }}
+        run: npx wrangler pages deploy .open-next/server --project-name=radtrails --branch=${{ github.head_ref || github.ref_name }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 857be0c1d837f7bbc6e6ccc212485d13
