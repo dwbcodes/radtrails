@@ -25,7 +25,7 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ vars.CLOUDFLARE_API_TOKEN_TEST }}
           CLOUDFLARE_ACCOUNT_ID: 857be0c1d837f7bbc6e6ccc212485d13
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
